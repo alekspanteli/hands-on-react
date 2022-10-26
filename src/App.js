@@ -7,9 +7,16 @@
 //   return <h1>Hello, {`${first} ${last}`}</h1>;
 // }
 
+import PropTypes from "prop-types";
+
 function Greeter({ first, last }) {
   return <h1>Hello, {`${first} ${last}`}</h1>;
 }
+
+Greeter.propTypes = {
+  first: PropTypes.string.isRequired,
+  last: PropTypes.string.isRequired,
+};
 
 function App() {
   const Person = {
