@@ -2,16 +2,16 @@
 // import "./Button.css";
 // import ProjectsPage from "./projects/ProjectsPage";
 
-const data = [
-  { id: 1, name: "apple" },
-  { id: 2, name: "orange" },
-  { id: 3, name: "blueberry" },
-  { id: 4, name: "banana" },
-  { id: 5, name: "kiwi" },
-];
-
 function FruitListItem(props) {
-  return <li>{props.fruit.name}</li>;
+  function handleClick(e, id) {
+    e.preventDefault();
+    console.log(e);
+    console.log(`removed ${id}`);
+  }
+
+  return (
+    <li onClick={(e) => handleClick(e, props.fruit.id)}>{props.fruit.name} </li>
+  );
 }
 
 function FruitList(props) {
@@ -20,6 +20,14 @@ function FruitList(props) {
   ));
   return <ul>{fruitListItems}</ul>;
 }
+
+const data = [
+  { id: 1, name: "apple" },
+  { id: 2, name: "orange" },
+  { id: 3, name: "blueberry" },
+  { id: 4, name: "banana" },
+  { id: 5, name: "kiwi" },
+];
 
 function App() {
   return (
