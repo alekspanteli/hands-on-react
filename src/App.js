@@ -2,30 +2,25 @@
 // import "./Button.css";
 // import ProjectsPage from "./projects/ProjectsPage";
 
-// function Greeter(props) {
-//   const { first, last } = props;
-//   return <h1>Hello, {`${first} ${last}`}</h1>;
-// }
+const data = [
+  { id: 1, name: "apple" },
+  { id: 2, name: "orange" },
+  { id: 3, name: "blueberry" },
+  { id: 4, name: "banana" },
+  { id: 5, name: "kiwi" },
+];
 
-import PropTypes from "prop-types";
-
-function Greeter({ first, last }) {
-  return <h1>Hello, {`${first} ${last}`}</h1>;
+function FruitList(props) {
+  const fruitListItems = props.fruits.map((fruit) => (
+    <li key={fruit.id}>{fruit.name}</li>
+  ));
+  return <ul>{fruitListItems}</ul>;
 }
 
-Greeter.propTypes = {
-  first: PropTypes.string.isRequired,
-  last: PropTypes.string.isRequired,
-};
-
 function App() {
-  const Person = {
-    firstName: "Alex",
-    lastName: "Panteli",
-  };
   return (
     <div className="container mx-auto px-4">
-      <Greeter first={Person.firstName} last={Person.lastName} />
+      <FruitList fruits={data} />
     </div>
   );
 }
