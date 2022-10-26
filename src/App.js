@@ -10,9 +10,13 @@ const data = [
   { id: 5, name: "kiwi" },
 ];
 
+function FruitListItem(props) {
+  return <li>{props.fruit.name}</li>;
+}
+
 function FruitList(props) {
   const fruitListItems = props.fruits.map((fruit) => (
-    <li key={fruit.id}>{fruit.name}</li>
+    <FruitListItem key={fruit.id} fruit={fruit} />
   ));
   return <ul>{fruitListItems}</ul>;
 }
