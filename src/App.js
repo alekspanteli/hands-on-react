@@ -1,11 +1,21 @@
-import logo from "./logo.svg";
-import "./App.css";
+// import logo from "./logo.png";
+
+// function Image() {
+//   return <img src="./logo.png" alt="test" />;
+// }
 
 function App() {
-  const logo = <img src="./react-logo.png" />;
+  // const logo = <img src="./logo.png" alt="test" />;
+  const logo = {
+    name: "React Logo",
+    title: "React Logo",
+    path: "./logo.svg",
+  };
   return (
     <div className="container mx-auto px-4">
-      <header>test</header>
+      {/* {logo} */}
+      {/* <Image /> */}
+      <img src={logo.path} alt={logo.name} title={logo.title} />
     </div>
   );
 }
