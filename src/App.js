@@ -4,20 +4,36 @@
 
 // import React from "react";
 
-import Car from "./Car";
+// import Car from "./Car";
 
-function Garage() {
+import { useState } from "react";
+import ReactDOM from "react-dom/client";
+
+function MyForm() {
+  const [name, setName] = useState("");
+
+  const handleSubmit = (event) => {
+    alert(`The name you entered was: ${name}`);
+  };
+
   return (
-    <>
-      <Car brand="Ford" />
-    </>
+    <form onSubmit={handleSubmit}>
+      <label>
+        Enter your name:
+        <input
+          type="text"
+          className="border border-black"
+          onChange={(e) => setName(e.target.value)}
+        />
+      </label>
+    </form>
   );
 }
 
 function App() {
   return (
     <div className="container mx-auto px-4">
-      <Garage />
+      <MyForm />
     </div>
   );
 }
