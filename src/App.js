@@ -7,12 +7,12 @@
 // import Car from "./Car";
 
 import { useState } from "react";
-import ReactDOM from "react-dom/client";
 
 function MyForm() {
   const [name, setName] = useState("");
 
   const handleSubmit = (event) => {
+    event.preventDefault();
     alert(`The name you entered was: ${name}`);
   };
 
